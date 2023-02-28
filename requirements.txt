@@ -1,0 +1,4 @@
+sphinxcontrib-asyncio
+sphinx
+django
+numpy
