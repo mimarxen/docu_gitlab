@@ -5,8 +5,10 @@ Usage
 
 Create Account
 ---------------
-visit the following link 
-
+Visit the following link and create your account under the register now button.
+When signing in, use your ZIH username and @tu-dresden.de email. You will have to wait for the administrator to allow you to log in for the first time, 
+as you need to be verified by the admin.
+On the first login, you won't have access to any repositories. Please ask your contact person or admin for access. 
 ..  code-block:: bash
 
     http://141.30.80.100:8080/
@@ -18,6 +20,8 @@ or via ssh access
 
     ssh://git@141.30.80.100:7999/Group/SubGroup/repo.git
 
+
+.. image:: _static/
 Setup SSH Keys
 -----------------------------
 
