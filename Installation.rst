@@ -1,8 +1,0 @@
-.. _Installation:
-
-Installation
-==========
-
-.. contents::
-   :local:
-   :depth: 1
