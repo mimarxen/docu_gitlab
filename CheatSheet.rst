@@ -2,9 +2,9 @@
 
 .. _api:
 
-API
+CheatSheet
 =====
-
+git push --set-upstream origin master
 .. contents::
    :local:
    :depth: 1
