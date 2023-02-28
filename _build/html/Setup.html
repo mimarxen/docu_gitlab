@@ -97,6 +97,25 @@ $ Enter the file in which to save the key (/home/user/.ssh/id_ed25519).
 <p>Log in to GitLab sesyn on your browser, and under the <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">settings</span> <span class="pre">&gt;</span> <span class="pre">preferences</span> <span class="pre">&gt;</span> <span class="pre">SSH</span> <span class="pre">Keys</span></code>, paste the info there and add a new key.
 You will see a file named <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code>. This is your private, and you must never share this key anywhere.</p>
 <p>Advanced users who are comfortable with bash can now move forward to <cite>Usage</cite> section.</p>
+<section id="configure-ssh-to-point-to-a-different-directory">
+<h3>Configure SSH to point to a different directory<a class="headerlink" href="#configure-ssh-to-point-to-a-different-directory" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-linux-config notranslate"><div class="highlight"><pre><span></span>eval<span class="w"> </span>$(ssh-agent<span class="w"> </span>-s)<span class="w"></span>
+ssh-add<span class="w"> </span>&lt;directory<span class="w"> </span>to<span class="w"> </span>private<span class="w"> </span>SSH<span class="w"> </span>key&gt;<span class="w"></span>
+</pre></div>
+</div>
+<p>Save these settings in the <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code> file. For example:</p>
+<div class="highlight-linux-config notranslate"><div class="highlight"><pre><span></span><span class="c1"># GitLab.com</span>
+Host<span class="w"> </span>gitlab.com<span class="w"></span>
+PreferredAuthentications<span class="w"> </span>publickey<span class="w"></span>
+IdentityFile<span class="w"> </span>~/.ssh/gitlab_com_rsa<span class="w"></span>
+
+<span class="c1"># Private GitLab instance</span>
+Host<span class="w"> </span>gitlab.company.com<span class="w"></span>
+PreferredAuthentications<span class="w"> </span>publickey<span class="w"></span>
+IdentityFile<span class="w"> </span>~/.ssh/example_com_rsa<span class="w"></span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="setup-vs-code-for-development">
 <h2>Setup VS Code for Development<a class="headerlink" href="#setup-vs-code-for-development" title="Permalink to this heading">¶</a></h2>

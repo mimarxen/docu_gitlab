@@ -82,6 +82,27 @@ You will see a file named ``id_ed25519``. This is your private, and you must nev
 
 Advanced users who are comfortable with bash can now move forward to `Usage` section. 
 
+Configure SSH to point to a different directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. code-block:: linux-config
+
+    eval $(ssh-agent -s)
+    ssh-add <directory to private SSH key>
+
+Save these settings in the ``~/.ssh/config`` file. For example:
+
+.. code-block:: linux-config
+
+    # GitLab.com
+    Host gitlab.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/gitlab_com_rsa
+
+    # Private GitLab instance
+    Host gitlab.company.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/example_com_rsa 
+
 Setup VS Code for Development
 ------------------------------------
 To set up vs code for development, we can set up GitLab access tokens. To use GitLab, you must be VPN or inside the building connected to LAN. 
