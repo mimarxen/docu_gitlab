@@ -1,5 +1,6 @@
+.. module:: Gitlab-Sesyn
 
-.. _CheatSheet:
+.. _cheatsheet:
 
 CheatSheet
 =================
