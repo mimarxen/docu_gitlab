@@ -34,7 +34,8 @@ here = os.path.abspath(os.path.dirname(__file__))
 extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.todo',
     'sphinx_copybutton',
-    'sphinxcontrib.asyncio']
+    'sphinxcontrib.asyncio',
+    'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

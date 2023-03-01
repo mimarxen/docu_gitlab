@@ -50,21 +50,83 @@ $ git config --global user.email <span class="s2">&quot;MY_NAME@tu-dresden.de&qu
 </section>
 <section id="clone-remote-repository">
 <h3>Clone Remote Repository<a class="headerlink" href="#clone-remote-repository" title="Permalink to this heading">¶</a></h3>
-</section>
-<section id="add-changes-to-remote-repository">
-<h3>Add changes to Remote Repository<a class="headerlink" href="#add-changes-to-remote-repository" title="Permalink to this heading">¶</a></h3>
-</section>
-<section id="commmit-changes">
-<h3>Commmit Changes<a class="headerlink" href="#commmit-changes" title="Permalink to this heading">¶</a></h3>
-</section>
-<section id="push-changes-to-remote">
-<h3>Push changes to Remote<a class="headerlink" href="#push-changes-to-remote" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin HEAD:&lt;target branch&gt;
+<p>Clone the repository using the HTML link from the clone option in GitLab.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone ssh://git@141.30.80.100:7999/Group/SubGroup/project.git
 </pre></div>
 </div>
 </section>
-<section id="create-repository-projects-and-groups">
-<h3>Create Repository/Projects and Groups<a class="headerlink" href="#create-repository-projects-and-groups" title="Permalink to this heading">¶</a></h3>
+<section id="how-it-works">
+<h3>How it works<a class="headerlink" href="#how-it-works" title="Permalink to this heading">¶</a></h3>
+<p>The git add and git commit commands compose the fundamental Git workflow. These are the two commands that every Git user needs to understand, regardless of their team’s collaboration model. They are the means to record versions of a project into the repository’s history.</p>
+<p>Developing a project revolves around the basic edit/stage/commit pattern. First, you edit your files in the working directory. When you’re ready to save a copy of the current state of the project, you stage changes with git add. After you’re happy with the staged snapshot, you commit it to the project history with git commit. The git reset command is used to undo a commit or staged snapshot.</p>
+<p>In addition to git add and git commit, a third command git push is essential for a complete collaborative Git workflow. git push is utilized to send the committed changes to remote repositories for collaboration. This enables other team members to access a set of saved changes.</p>
+</section>
+<section id="add-changes-to-remote-repository">
+<h3>Add changes to Remote Repository<a class="headerlink" href="#add-changes-to-remote-repository" title="Permalink to this heading">¶</a></h3>
+<p>whenever the code is modified you can always add them to you git.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git add .
+</pre></div>
+</div>
+</section>
+<section id="commmit-changes">
+<h3>Commmit Changes<a class="headerlink" href="#commmit-changes" title="Permalink to this heading">¶</a></h3>
+<p>Commit set a message about the changes you were done. The commit also saves a revision of the code and you can revert the code to any version anytime in one click.
+A commit is kind of ‘object’ in git, and identifies and specifies a ‘snapshot’ of the branch at the time of the commit.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git commit -m <span class="s2">&quot;message&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="push-changes-to-remote">
+<h3>Push changes to Remote<a class="headerlink" href="#push-changes-to-remote" title="Permalink to this heading">¶</a></h3>
+<p>The git push command is used to upload local repository content to a remote repository. Pushing is how you transfer commits from your local repository to a remote repo. It’s the counterpart to git fetch, but whereas fetching imports commits to local branches,
+pushing exports commits to remote branches. Remote branches are configured using the git remote command. Pushing has the potential to overwrite changes, caution should be taken when pushing.</p>
+<p>for git deteched enviornements you have to use</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin HEAD:&lt;target branch&gt;
+</pre></div>
+</div>
+<p>for pushing to an empty repositories use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push --set-upstream origin master
+</pre></div>
+</div>
+<p>General schema for git push:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push &lt;remote&gt; &lt;branch&gt;
+</pre></div>
+</div>
+</section>
+<section id="setting-up-an-empty-repository">
+<h3>Setting up an empty repository<a class="headerlink" href="#setting-up-an-empty-repository" title="Permalink to this heading">¶</a></h3>
+<p>A Git repository is a virtual storage of your project. It allows you to save versions of your code, which you can access when needed.</p>
+<p>You’ll first cd to the root project folder and then execute the git <code class="docutils literal notranslate"><span class="pre">init</span></code> command.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /path/to/your/existing/code
+$ git init
+</pre></div>
+</div>
+<p>Pointing git <code class="docutils literal notranslate"><span class="pre">init</span></code> to an existing project directory will execute the same initialization setup as mentioned above, but scoped to that project directory.</p>
+<p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span> <span class="pre">&lt;project</span> <span class="pre">directory&gt;</span></code></p>
+</section>
+<section id="ignoring-files">
+<h3>Ignoring files<a class="headerlink" href="#ignoring-files" title="Permalink to this heading">¶</a></h3>
+<p>Ignored files are tracked in a special file named <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> that is checked in at the root of your repository. There is no explicit git ignore command: instead the <code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> file must be edited and committed by hand when you have new files that you wish to ignore.
+<code class="docutils literal notranslate"><span class="pre">.gitignore</span></code> files contain patterns that are matched against file names in your repository to determine whether or not they should be ignored.</p>
+</section>
+<section id="creating-branch-and-other-related-functions">
+<h3>Creating branch and other related functions<a class="headerlink" href="#creating-branch-and-other-related-functions" title="Permalink to this heading">¶</a></h3>
+<p>A branch represents an independent line of development. Branches serve as an abstraction for the edit/stage/commit process. You can think of them as a way to request a brand new working directory, <code class="docutils literal notranslate"><span class="pre">staging</span> <span class="pre">area</span></code>, and <code class="docutils literal notranslate"><span class="pre">project</span> <span class="pre">history</span></code>.
+New commits are recorded in the history for the current branch, which results in a fork in the history of the project.
+It’s important to understand that branches are just pointers to commits. When you create a branch, all Git needs to do is create a new pointer, it doesn’t change the repository in any other way.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> command lets you <strong>create, list, rename, and delete branches</strong>. It doesn’t let you switch between branches or put a forked history back together again. For this reason, <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span></code> is tightly integrated with the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span></code> and <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">merge</span></code> commands.</p>
+<p>List all of the branches in your repository. This is synonymous with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch --list
+</pre></div>
+</div>
+<p>Create a new branch called <code class="docutils literal notranslate"><span class="pre">＜branch＞</span></code>. This does not check out the new branch.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch -d &lt;branch&gt;
+</pre></div>
+</div>
+<p>Delete the specified branch. This is a <strong>“safe”</strong> operation in that Git prevents you from deleting the branch if it has unmerged changes.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git branch -D &lt;branch&gt;
+</pre></div>
+</div>
 </section>
 </section>
 <section id="vs-code-tutorial-for-gitlab-tools">
@@ -80,13 +142,10 @@ $ git config --global user.email <span class="s2">&quot;MY_NAME@tu-dresden.de&qu
 </section>
 <section id="id5">
 <h3>Push changes to Remote<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git push origin HEAD:&lt;target branch&gt;
-</pre></div>
-</div>
 </section>
-<section id="id6">
-<h3>Create Repository/Projects and Groups<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h3>
 </section>
+<section id="create-repository-projects-and-groups">
+<h2>Create Repository/Projects and Groups<a class="headerlink" href="#create-repository-projects-and-groups" title="Permalink to this heading">¶</a></h2>
 </section>
 </section>
 
@@ -113,6 +172,7 @@ $ git config --global user.email <span class="s2">&quot;MY_NAME@tu-dresden.de&qu
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#terminal-based-usage">Terminal based Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#vs-code-tutorial-for-gitlab-tools">VS Code Tutorial for gitlab tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-repository-projects-and-groups">Create Repository/Projects and Groups</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="CheatSheet.html">CheatSheet</a></li>
