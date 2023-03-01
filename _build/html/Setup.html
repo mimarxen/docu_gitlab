@@ -95,8 +95,12 @@ $ Enter the file in which to save the key (/home/user/.ssh/id_ed25519).
 </div>
 <p>and copy whatever is displayed in the next line.</p>
 <p>Log in to GitLab sesyn on your browser, and under the <code class="docutils literal notranslate"><span class="pre">user</span> <span class="pre">settings</span> <span class="pre">&gt;</span> <span class="pre">preferences</span> <span class="pre">&gt;</span> <span class="pre">SSH</span> <span class="pre">Keys</span></code>, paste the info there and add a new key.
-You will see a file named <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code>. This is your private, and you must never share this key anywhere.</p>
-<p>Advanced users who are comfortable with bash can now move forward to <cite>Usage</cite> section.</p>
+You will see a file named <code class="docutils literal notranslate"><span class="pre">id_ed25519</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This(id_ed25519) is your <strong>private key</strong>, and you must <strong>never</strong> share this key anywhere. You will be held responsible for the fallout of your actions.</p>
+</div>
+<p>Advanced users who are comfortable with bash can now move forward to :<a class="reference internal" href="Usage.html#usage"><span class="std std-ref">Usage</span></a> section.</p>
 <section id="configure-ssh-to-point-to-a-different-directory">
 <h3>Configure SSH to point to a different directory<a class="headerlink" href="#configure-ssh-to-point-to-a-different-directory" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-linux-config notranslate"><div class="highlight"><pre><span></span>eval<span class="w"> </span>$(ssh-agent<span class="w"> </span>-s)<span class="w"></span>

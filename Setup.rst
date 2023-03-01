@@ -78,9 +78,12 @@ Then type
 and copy whatever is displayed in the next line. 
 
 Log in to GitLab sesyn on your browser, and under the ``user settings > preferences > SSH Keys``, paste the info there and add a new key. 
-You will see a file named ``id_ed25519``. This is your private, and you must never share this key anywhere. 
+You will see a file named ``id_ed25519``. 
 
-Advanced users who are comfortable with bash can now move forward to `Usage` section. 
+.. warning::
+    This(id_ed25519) is your **private key**, and you must **never** share this key anywhere. You will be held responsible for the fallout of your actions. 
+
+Advanced users who are comfortable with bash can now move forward to ::ref:`Usage` section. 
 
 Configure SSH to point to a different directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
