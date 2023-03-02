@@ -1,8 +1,10 @@
-image: registry.gitlab.com/gitlab-org/gitlab-docs:15.8
+image: ruby:2.7
+
 pages:
   script:
-  - mkdir public
-  - cp -a _build/html/* public/
+    - gem install bundler
+    - bundle install
+    - bundle exec jekyll build -d public
   artifacts:
     paths:
-    - public
+      - public
