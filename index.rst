@@ -53,7 +53,7 @@ User Guide
    Setup
    Usage
    CheatSheet
-      
+   wsl-setup
 
 Indices and tables
 ==================
