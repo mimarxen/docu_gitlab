@@ -35,7 +35,17 @@ The following softwares are required for this:
 * `GitLab Workflow <https://marketplace.visualstudio.com/items?itemName=GitLab.gitlab-workflow>`__
 * `Git Cheatsheet <https://marketplace.visualstudio.com/items?itemName=dzhavat.git-cheatsheet>`__ to use ```ctrl+shift+p``` and ```Open Git CheatSheet```
 
+Setup Git LFS
+----------------
+Please follow the instruction on the following link to set up Git LFS.
+This allows you to store large files in the repository and work with  them.
+`Git LFS <https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage>`__
 
+Genrally if the admin has the system configured properly, you just have to run the following command in your bash at the location where you want to clone everything.
+
+.. code-block:: bash
+
+    $ git lfs install   
 
 Setup SSH Keys
 -----------------------------

@@ -66,6 +66,16 @@ On the first login, you won’t have access to any repositories. Please ask your
 <li><p><a class="reference external" href="https://marketplace.visualstudio.com/items?itemName=dzhavat.git-cheatsheet">Git Cheatsheet</a> to use <code class="docutils literal notranslate"><span class="pre">`ctrl+shift+p`</span></code> and <code class="docutils literal notranslate"><span class="pre">`Open</span> <span class="pre">Git</span> <span class="pre">CheatSheet`</span></code></p></li>
 </ul>
 </section>
+<section id="setup-git-lfs">
+<h2>Setup Git LFS<a class="headerlink" href="#setup-git-lfs" title="Permalink to this heading">¶</a></h2>
+<p>Please follow the instruction on the following link to set up Git LFS.
+This allows you to store large files in the repository and work with  them.
+<a class="reference external" href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage">Git LFS</a></p>
+<p>Genrally if the admin has the system configured properly, you just have to run the following command in your bash at the location where you want to clone everything.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git lfs install
+</pre></div>
+</div>
+</section>
 <section id="setup-ssh-keys">
 <h2>Setup SSH Keys<a class="headerlink" href="#setup-ssh-keys" title="Permalink to this heading">¶</a></h2>
 <p>To clone the repository, you must use ssh. (SSH or Secure Shell is a network communication protocol that enables two computers to communicate (c.f http or hypertext transfer protocol, which is the protocol used to transfer hypertext such as web pages) and share data.)</p>
@@ -165,6 +175,7 @@ Give all the scopes to this.</p>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Setup</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#create-account">Create Account</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#software-requirements">Software Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-git-lfs">Setup Git LFS</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setup-ssh-keys">Setup SSH Keys</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setup-vs-code-for-development">Setup VS Code for Development</a></li>
 </ul>
