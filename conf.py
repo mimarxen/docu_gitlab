@@ -35,7 +35,10 @@ extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.todo',
     'sphinx_copybutton',
     'sphinxcontrib.asyncio',
-    'sphinx.ext.githubpages']
+    'sphinx.ext.githubpages',
+    'sphinxcontrib.images',
+    'nbsphinx',
+    'sphinx_gallery.load_style',]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -59,7 +62,7 @@ author = 'Garvit Joshi'
 # built documents.
 #
 # The short X.Y version.
-version = "0.1"
+version = "0.3"
 # The full version, including alpha/beta/rc tags.
 release = "alpha"
 
